@@ -179,6 +179,91 @@ files:
       }
     }
   learner_created: false
-feedback_link: https://hyperskill.org/projects/260/stages/1318/implement#comment
+- name: src/asciimirror/User.java
+  visible: true
+  text: |
+    package asciimirror;
+    import java.util.Scanner;
+
+    public class User {
+        private Scanner scan;
+        private StringBuilder userInput;
+
+        /**
+         * This is the constructor of the User class.
+         */
+        User(){
+            initTools();
+            initAttributes();
+        }
+
+        /**
+         * This method is used to initialize the attributes of the class.
+         */
+        private void initAttributes() {
+            userInput = new StringBuilder();
+        }
+
+        /**
+         * This method is used to initialize the tools used in the class.
+         */
+        private void initTools() {
+            scan = new Scanner(System.in);
+        }
+
+        public void promptUser(){
+            promptRequest();
+            userInput.append(scan.nextLine());
+        }
+
+        private void promptRequest() {
+            System.out.println("Input the file path:");
+        }
+
+        public String getUserInput(){
+            return userInput.toString();
+        }
+    }
+  learner_created: true
+- name: src/asciimirror/Creature.java
+  visible: true
+  text: |
+    package asciimirror;
+    public class Creature {
+        private StringBuilder temp, cow;
+        Creature(){
+            temp = new StringBuilder();
+            cow = new StringBuilder();
+            buildCreatures();
+        }
+        private void buildCreatures() {
+            cow();
+        }
+
+        private void cow(){
+            temp.append("            ^__^\s\n")
+                .append("    _______/(oo)\s\n")
+                .append("/\\/(       /(__)\s\n")
+                .append("   | w----||    \s\n")
+                .append("   ||     ||    \s\n");
+            cow.append(temp.toString().replace(" ", "*"));
+        }
+
+        public String getCow(){
+            return cow.toString().replace("*", " ");
+        }
+
+        public void printCow(){
+            System.out.println("""
+                                ^__^
+                        _______/(oo)
+                    /\\/(       /(__)
+                       | w----||   \s
+                       ||     ||   \s""");
+        }
+
+    }
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/20317#comment
 status: Unchecked
 record: -1
