@@ -30,6 +30,7 @@ public class User {
     public void promptUser(){
         promptRequest();
         userInput.append(scan.nextLine());
+
     }
 
     private void promptRequest() {
